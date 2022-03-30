@@ -1,0 +1,90 @@
+ <!-- <button mat-raised-button [disabled]="loginForm.invalid" on-click='loginSubmit()'>LOG IN</button> -->
+  <!-- <div *ngIf="f['email'].errors ['required']">Email address is required</div>  -->
+
+
+<!-- <div class="container">
+      <form [formGroup]="loginForm">
+       <div class="item">
+        <img class="logo" src="./assets/logo.png" alt="Test Logo" />
+        <h5>OnlineTest</h5>
+
+       </div>
+         
+           <div class="item">
+            <mat-form-field class="textColor">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Ex. abhi@gmail.com" name="email"  formControlName="email"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+              <mat-error>
+                <div *ngIf="submitted && f['email'].errors">
+                  
+                  <div *ngIf="f['email'].errors email">Please provide a valid email address</div>
+                </div>
+              </mat-error>
+            </mat-form-field>
+           </div>
+       
+          <div class="item">
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput type="password" placeholder="Ex. Abhi5502@"  name="password"  
+                formControlName="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+              <mat-error>
+                <div *ngIf="submitted && f['password'].errors">
+                
+                  <div *ngIf="f['password'].errors password">Must be alphanumeric and having small case & capital case letters</div>
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+       
+         <div class="button">
+          <button mat-raised-button  on-click='loginSubmit()'>LOG IN</button>
+         </div>
+      
+       
+
+        <mat-error>
+          <label class="error-message">{{ errMsg }}</label>
+      </mat-error>
+      </form>
+    </div>
+   -->
+
+    <div class="container" fxLayout="column" fxLayout.md="row"  fxLayoutAlign="start center" fxLayoutGap="10px">
+      <div class="cardWrap" fxLayout.lt-md="column" fxLayout.md="column"  fxLayout="row" fxFlex.md="50" fxLayoutAligmnet="space-between center" fxLayoutGap="10px" >
+          <div fxFlex.lt-md="100" fxFlex="35" class="page" >
+            <form [formGroup]="loginForm">
+              
+               <img class="logo" src="./assets/logo.png" alt="Test Logo" />
+               <h5>OnlineTest</h5>
+               <mat-form-field class="textColor">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Ex. abhi@gmail.com" name="email"  formControlName="email"
+                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                <mat-error>
+                  <div *ngIf="submitted && f['email'].errors">
+                     <!-- <div *ngIf="f['email'].errors ['required']">Email address is required</div>  -->
+                    <div *ngIf="f['email'].errors email">Please provide a valid email address</div>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Ex. Abhi5502@"  name="password"  
+                  formControlName="password" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                <mat-error>
+                  <div *ngIf="submitted && f['password'].errors">
+                  
+                    <div *ngIf="f['password'].errors password">Must be alphanumeric and having small case & capital case letters</div>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+          
+          <div class="button">
+            <button mat-raised-button  on-click='loginSubmit()'>LOG IN</button>
+           </div>
+        </form>
+   </div>
