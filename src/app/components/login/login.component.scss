@@ -1,0 +1,29 @@
+$BlueSee:rgba(0,87,184,255);
+$loginBackgroundColor: rgba(255,255,255,255);
+
+
+.container{
+  background-color: $BlueSee;
+  
+}
+.page{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5.92rem;
+  margin-bottom: 5.92rem;
+  padding: 4rem 4rem;
+  background-color: $loginBackgroundColor;
+  width: 70rem;
+  height: auto;
+}
+  .logo {
+    width: 90px;
+    height: 35px;
+  }
+  button{
+    margin-top: 20px;
+    background-color: $BlueSee;
+    float: right;  
+    width: 90px;
+  }
+

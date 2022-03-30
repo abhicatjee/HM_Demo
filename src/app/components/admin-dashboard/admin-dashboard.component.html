@@ -1,0 +1,101 @@
+
+
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">  <button mat-raised-button color="accent"  on-click='GetAllUsers()'>Users Information</button></div>
+    <div class="page__content shadow p-3 position-relative">
+        <table border="1">            
+            <tr>
+                <th>User Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile no.</th>
+                <th>Role</th>
+            </tr>
+                <tr *ngFor="let item of users">
+                    <td> {{item.userId}}</td>
+                    <td> {{item.name}}</td>
+                    <td> {{item.email}}</td>
+                    <td> {{item.mobile}}</td>
+                    <td>{{item.role}}</td>
+                </tr>
+      </table>
+      <div class="page__content-data position-absolute text-center">
+      <br>
+     
+        
+       
+    
+      </div>
+    </div>
+  </div>
+  
+
+
+
+<!-- 
+<mat-drawer-container class="example-container">
+
+   
+    <mat-drawer-content>
+        <mat-grid-list cols="1" rowHeight="12:2"> 
+            <mat-grid-tile>
+                <mat-grid-tile-header>
+                    <button mat-raised-button color="primary"  routerLink="/home">Home</button>
+                    &nbsp;&nbsp;
+                    <button mat-raised-button color="primary"  routerLink="/about">About</button>
+                    &nbsp;&nbsp;
+                    <button mat-raised-button color="primary"  routerLink="/manageresult">Manage Result</button>
+                    &nbsp;&nbsp;
+                    <button mat-raised-button color="accent"  on-click='GetAllUsers()'>Users Information</button>
+                    &nbsp;&nbsp;
+                    <button mat-raised-button color="warn"  on-click='logout()'>logout</button>
+                    &nbsp;&nbsp;
+          
+                </mat-grid-tile-header>
+            
+              
+            </mat-grid-tile>
+          </mat-grid-list>
+        
+          <mat-grid-list cols="1" rowHeight="12:2">
+            
+            <mat-grid-tile>
+               
+                    <table>
+                   
+                      
+                        <tr>
+                            <th>User Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile no.</th>
+                            <th>Role</th>
+                        </tr>
+                      
+                        
+                            <tr *ngFor="let item of users">
+                                <td> {{item.userId}}</td>
+                                <td> {{item.name}}</td>
+                                <td> {{item.email}}</td>
+                                <td> {{item.mobile}}</td>
+                                <td>{{item.role}}</td>
+                            </tr>
+                        
+            
+                  
+                   
+                  </table>
+            </mat-grid-tile>
+            
+          </mat-grid-list>
+        
+        
+          <mat-grid-list cols="1" rowHeight="12:2"> 
+            <mat-grid-tile>
+                <mat-grid-tile-footer>
+                    All rights reserved
+                </mat-grid-tile-footer>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </mat-drawer-content>
+  </mat-drawer-container> -->
