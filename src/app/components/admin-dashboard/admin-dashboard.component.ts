@@ -8,15 +8,14 @@ import { AccountService } from 'src/app/services/account.service';
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.scss']
 })
-export class AdminDashboardComponent implements OnInit {
+export class AdminDashboardComponent{
   user: User;
   users: User[];
   constructor(private accountService: AccountService, private router:Router) {
     this.user=new User();
    }
 
-  ngOnInit(): void {
-  }
+
   GetAllUsers() {
     this.accountService.GetAllUsers().subscribe(resp => {
       this.users = resp;

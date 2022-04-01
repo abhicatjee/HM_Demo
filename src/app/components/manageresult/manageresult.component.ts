@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './manageresult.component.html',
   styleUrls: ['./manageresult.component.scss']
 })
-export class ManageresultComponent implements OnInit {
+export class ManageresultComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
