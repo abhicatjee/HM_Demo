@@ -7,14 +7,14 @@ import { User } from 'src/app/models/user';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 user:User;
   constructor(private router: Router) {
     this.user=new User();
   }
 
-  ngOnInit(): void {}
+
 
   toggleSidebar() {
     this.toggleSidebarForMe.emit();
