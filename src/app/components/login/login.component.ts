@@ -63,6 +63,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Auth } from 'src/app/models/auth';
 import { Login } from 'src/app/models/login';
 import { User } from 'src/app/models/user';
 import { AccountService } from 'src/app/services/account.service';
@@ -75,6 +76,7 @@ import { AccountService } from 'src/app/services/account.service';
 export class LoginComponent implements OnInit {
   _user='1';
   user: User;
+  auth:Auth;
   errMsg: string;
   login: Login;
   loginForm:FormGroup;
@@ -84,6 +86,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb:FormBuilder ,private accountService: AccountService, private router: Router) {
     this.login = new Login();
+    this.auth = new Auth();
   }
 
   ngOnInit(): void {
@@ -110,15 +113,19 @@ export class LoginComponent implements OnInit {
 
     this.accountService.Validate(this.login).subscribe(
       resp => {
-        this.user = resp;
-        if (this.user != null) {
-
-          if (this.user.role == "admin") {
+        
+        this.auth = resp;
+        
+        if (this.auth != null) {
+          localStorage['token'] = this.auth.token;
+          localStorage['role'] = this.auth.role;
+          if ( localStorage['role'] == "admin") {
+           
             localStorage.setItem('sessionUser', this._user);
             this.router.navigateByUrl('/admin-dashboard');
           }
           else {
-            this.router.navigateByUrl('/user-dashboard')
+            this.router.navigateByUrl('/admin-dashboard')
           }
         }
         else {

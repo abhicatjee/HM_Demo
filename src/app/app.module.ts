@@ -21,7 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { AccountService } from './services/account.service';
@@ -38,6 +38,7 @@ import {MatTableModule} from '@angular/material/table';
 import { HomeComponent } from './components/home/home.component';
 import {MatListModule} from '@angular/material/list';
 import { HeaderComponent } from './components/header/header.component';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,12 @@ import { HeaderComponent } from './components/header/header.component';
     MatGridListModule,
     MatTableModule
   ],
-  providers: [AccountService, AuthguardService],
+  providers: [AccountService,  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+  },
+  AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

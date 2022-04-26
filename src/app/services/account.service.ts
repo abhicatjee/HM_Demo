@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Auth } from '../models/auth';
 import { Login } from '../models/login';
 import { User } from '../models/user';
 
@@ -15,11 +16,11 @@ export class AccountService {
   {
   return this.http.post(this.account_api+'SignUp',user);
   }
-  Validate(login:Login):Observable<User>
+  Validate(login:Login):Observable<Auth>
   {
     
     console.log(login);
-    return this.http.post<User>(this.account_api+'SignIn',login);
+    return this.http.post<Auth>(this.account_api+'SignIn',login);
     
   }
   GetAllUsers():Observable<User[]>
