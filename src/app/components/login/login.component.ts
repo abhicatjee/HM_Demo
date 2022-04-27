@@ -115,8 +115,7 @@ export class LoginComponent implements OnInit {
       resp => {
         
         this.auth = resp;
-        
-        if (this.auth != null) {
+        if (this.auth.token != null) {
           localStorage['token'] = this.auth.token;
           localStorage['role'] = this.auth.role;
           if ( localStorage['role'] == "admin") {
